@@ -1,15 +1,15 @@
 <?php
-
+//DISPLAY ERRORS TO THE BROWSER
 ini_set("display_errors", 1);
 require_once ("../core/app.php");
 
-// Read the HTML file
+//Set the template file to be used
 $objFile = new File("../core/templates/public.html");
+//Read the contents of template into the object instance
 $objFile->read();
-$strFileContents = $objFile->strFileContents;
 
-// Initialize the Document object
-$objDocument = new Document($strFileContents);
+// Initialize the Document object with template as its resource
+$objDocument = new Document($objFile->strFileContents);
 $strResourcePath = "../res";
 //Initialize the router
 $objRouter = new Router();

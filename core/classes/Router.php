@@ -41,18 +41,18 @@ class Router {
                     $objController->index($strSubRoute);
                     $this->htmRouteContent = $objController->htmContent;
                 } else {
-                    $this->send404(); // If index method doesn't exist
+                    $this->send404("Invalid Route Method"); // If index method doesn't exist
                 }
             } else {
-                $this->send404(); // If class doesn't exist
+                $this->send404("Invalid Route"); // If class doesn't exist
             }
         } else {
-            $this->send404(); // If file doesn't exist
+            $this->send404("Route Controller Unavailable"); // If file doesn't exist
         }
     }
 
-    private function send404() {
-        echo "404 - Page Not Found";
+    private function send404($strError) {
+        $this->htmRouteContent = $strError;
     }
 }
 ?>

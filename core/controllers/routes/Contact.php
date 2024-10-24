@@ -1,9 +1,9 @@
 <?php
-class Home {
+class Contact {
     public $htmContent;
     public function index($strSubRoute = null) {
         if ($strSubRoute) {
-            $this->htmContent = "Welcome to the Home $strSubRoute Page!";
+            $this->htmContent = "Welcome to the ontact $strSubRoute Page!";
 
             // Explode the subroute string inside the controller
             $arrSubRouteParts = explode('/', $strSubRoute);
@@ -20,7 +20,7 @@ class Home {
             }
             */
         } else {
-            $this->htmContent = "Welcome to the Home Page!";
+            $this->htmContent = "Welcome to the ContVct Page!";
         }
     }
 }
