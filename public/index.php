@@ -16,7 +16,14 @@ $objRouter = new Router();
 $objRouter->route();
 // Process with Template
 $objTemplate = new Template($objDocument, $strResourcePath);
+$strHeredoc = <<<HEREDOC
+<div class="lo-nav">
+    
+</div>
+HEREDOC;
 $objTemplate->addData("strTitle", "My Website");
+$objNav = new Document("<html></html>");
+$objTermplate->addData("htmLoNav", $htmLoNav);
 $docContent = $objRouter->htmRouteContent ? $objRouter->htmRouteContent : "Page not found";
 $objTemplate->addData("htmContent", $docContent);
 $objTemplate->compile();

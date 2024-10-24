@@ -51,5 +51,6 @@ class Dir{
     }
 }
 
-
+$d = new Dir(".", true);
+var_dump($d);
 ?>
