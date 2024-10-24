@@ -24,7 +24,13 @@ class File {
         }
     }
 
-
+    pubic function getFileAttribs(){
+        $this->arrFileAttribs = [];
+        $this->arrFileAttribs["atime"] = '';
+        $this->arrFileAttribs['mtime'] = '';
+        $this->arrFileAttribs['ctime'] = '';
+        $this->arrFileAttribs['size'] = '';
+    }
     /**
      * Create a new file
      * 
